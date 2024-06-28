@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Ex1
 {
@@ -6,9 +7,33 @@ namespace Ex1
     {
         static void Main(string[] args)
         {
-            Person p1 = new Person("Arthur", new DateTime(2004, 10, 20));
+            Console.Write("Insert how many people you want to register: ");
+            int qtt = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Age: " + p1.Age);
+            List<Person> people = new List<Person>();
+
+            for (int i = 1; i <= qtt; i++)
+            {
+                Console.WriteLine("Person 1:");
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+
+                Console.Write("Birth (dd/MM/yyyy): ");
+                string birthString = Console.ReadLine();
+
+                string[] birthSplit = string.IsNullOrEmpty(birthString) ? null : birthString.Split('/');
+
+                DateTime birth = new DateTime(int.Parse(birthSplit[2]), int.Parse(birthSplit[1]), int.Parse(birthSplit[0]));
+
+                people.Add(new Person(name, birth));
+            }
+
+            Console.WriteLine("People registered:");
+
+            foreach (Person person in people)
+            {
+                Console.WriteLine(person);
+            }
         }
     }
 }
