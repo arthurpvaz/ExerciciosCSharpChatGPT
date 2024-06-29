@@ -8,42 +8,42 @@ namespace Ex2
     {
         public string Name { get; private set; }
         public double Price { get; private set; }
-        public int AmountOnStock { get; private set; }
+        public int AmountInStock { get; private set; }
 
-        public Product() 
+        public Product()
         {
         }
 
-        public Product(string name, double price, int amountOnStock)
+        public Product(string name, double price, int amountInStock)
         {
             Name = name;
             Price = price;
-            AmountOnStock = amountOnStock;
+            AmountInStock = amountInStock;
         }
 
-        public void ChangeName(string name)
+        public void ChangeName(string newName)
         {
-            Name = name;
+            Name = newName;
         }
 
-        public void ChangePrice(double price)
+        public void ChangePrice(double newPrice)
         {
-            Price = price;
+            Price = newPrice;
         }
 
-        public void AddAmountOnStock(int amountToAdd)
+        public void AddAmountInStock(int amountToAdd)
         {
-            AmountOnStock += amountToAdd;
+            AmountInStock += amountToAdd;
         }
 
-        public void RemoveAmountOnStock(int amountToRemove)
+        public void RemoveAmountInStock(int amountToRemove)
         {
-            AmountOnStock -= amountToRemove;
+            AmountInStock -= amountToRemove;
         }
 
         public override string ToString()
         {
-            return $"Product: {Name} - ${Price.ToString("F2", CultureInfo.InvariantCulture)} - {AmountOnStock} un";
+            return $"Product: {Name} - ${Price.ToString("F2", CultureInfo.InvariantCulture)} - {AmountInStock} un";
         }
     }
 }

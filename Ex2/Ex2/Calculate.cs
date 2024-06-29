@@ -11,7 +11,7 @@ namespace Ex2
 
             foreach (Product product in products)
             {
-                count += product.AmountOnStock;
+                count += product.AmountInStock;
             }
 
             return count;
@@ -23,7 +23,7 @@ namespace Ex2
 
             foreach (Product product in stock)
             {
-                totalValue += (product.Price) * product.AmountOnStock;
+                totalValue += (product.Price) * product.AmountInStock;
             }
 
             return totalValue;
