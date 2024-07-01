@@ -19,7 +19,7 @@ namespace Ex2
                 Console.WriteLine("4) Change name of a product");
                 Console.WriteLine("5) Change price of a product");
                 Console.WriteLine("6) Calculate amount in stock");
-                Console.WriteLine("7) Leave");
+                Console.WriteLine("7) Show products in Stock");
                 Console.WriteLine("8) Leave");
 
                 // input option
@@ -187,8 +187,14 @@ namespace Ex2
                 else if (option == 7)
                 {
                     Console.WriteLine("Products in stock");
+
+                    foreach (Product product in stock)
+                    {
+                        Console.WriteLine(product);
+                    }
+                
                 }
-                else if (option == 7)
+                else if (option == 8)
                 {
                     break;
                 }
